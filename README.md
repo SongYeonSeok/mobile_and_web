@@ -1,9 +1,9 @@
 # Mobile
-* 목차(시간 있을 떄)
+* 목차
   * kotlin
   * rxkotlin
 
-# Web
+# Web(Full-Stack)
 * 목차
   * HTML/CSS
   * Javascript

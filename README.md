@@ -1,12 +1,14 @@
 # Mobile
 * 목차(시간 있을 떄)
-  * swift, kotlin
+  * kotlin
+  * rxkotlin
 
 # Web
 * 목차
   * HTML/CSS
   * Javascript
-  * Python - Django
-  * Python - Flask (우선)
-  * Java 
+  * Python - Flask
+  * React.js
+  * Node.js
+  * Electron 
 

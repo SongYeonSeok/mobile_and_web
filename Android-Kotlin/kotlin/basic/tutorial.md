@@ -54,3 +54,91 @@ fun main() {
 - ```println()```, ```print()```
   - ```print()``` function is similar to ```println()```. The only difference is that it does not insert a new line at the end of the output.
 
+# 3. Variables
+- To create a variable, use ```var``` or ```val```, and assign a value to it with the equal sign (```=```).
+  ```kotlin
+  var variableName = value
+  val variableName = value
+  ```
+  
+  - example
+  ```kotlin
+  var name = "John"
+  val birthyear = 1975
+  
+  println(name)
+  println(birthyear)
+  ```
+  
+  - The difference between ```var``` and ```val```is that variables declared with the ```var``` keyword **can be changed/modified**, while ```val``` variables **cannot**.
+  - Therefore, ```var``` variables can be changed/modified, but ```val``` variables can not be changed/modified.
+
+- Variable Type
+  - Unlike many other programming languages, variable in Kotlin do not need to be declared with a specified type.
+  - To create a variable in Kotlin that should store text and another that should store a number, look at the following example:
+  
+  ```Kotlin
+  // example.kt
+  var name = "John"    // String (text)
+  val birthyear = 1975 // Int (number)
+  
+  println(name)
+  println(birthyear)
+  ```
+  
+  - Kotlin is smart enough to understand that "John" is a ```String```(text), and that **1975** is an ```Int``` (number) variable.
+  - However, it is possible to specify the type if you instst:
+  ```kotlin
+  var name: String = "John"  // String
+  val birthyear: Int = 1975  // Int
+  
+  println(name)
+  println(birthyear)
+  ```
+  
+  - You can also declare a variable without assign the value, and assign the value later.
+  - However, this is only possible when you specify the type:
+  - This works fine:
+  ```kotlin
+  var name: String
+  name = "John"
+  println(name)
+  ```
+  
+  - This will generate an error:
+  ```kotlin
+  var name
+  name = "John"
+  println(name)
+  ```
+  
+- Note on ```val```
+  - ```val``` value cannot be changed/reassigned.
+  ```kotlin
+  val name = "John"
+  name = "Robert"  // Error! (use var!)
+  println(name)
+  ```
+  
+  - So... The ```val``` keyword is useful when you want a variable to always store the same value, like PI, e, ...
+
+- ```println()``` method can use ```+``` character.
+  - ```+``` character use to combine both text and a variagble.
+  ```kotlin
+  val name = "John"
+  println("Hello " + name)
+  
+  val x = 5
+  val y = 6
+  println(x + y) // 11
+  ```
+  
+- Variable Names
+  - The general rule for Kotlin variables are:
+    - Names can contain letters, digits, underscores, and dollar signs.
+    - Names should start with a letter.
+    - Names can also begin with $ and _.
+    - Names are case sensitive. ("myVar" and "myvar" are different variables)
+    - Names should start with a lower case letter and it cannot contain whitespace.
+    - Reserved Words (ex : var, String) cannot be used as names.
+  - (Recommended Notation : camelCase Notation)

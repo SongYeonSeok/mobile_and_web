@@ -1,7 +1,7 @@
 # Mobile
 * 목차
   * kotlin
-    - [kotlin 공식 문서](https://kotlinlang.org/)
+    - [android-kotlin](https://github.com/yeonseoksong/application_dev/tree/main/Android-Kotlin)
   * rxkotlin
 
 # Web(Full-Stack)

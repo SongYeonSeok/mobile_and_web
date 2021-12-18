@@ -1,7 +1,7 @@
 # Mobile
 * 목차
   * kotlin
-    - [w3school - kotlin](https://github.com/yeonseoksong/application_dev/tree/main/w3school/kotlin)
+    - [kotlin 공식 문서](https://kotlinlang.org/)
   * rxkotlin
 
 # Web(Full-Stack)

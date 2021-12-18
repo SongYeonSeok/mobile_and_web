@@ -12,3 +12,6 @@
   * Node.js
   * Electron 
 
+# Database
+* MySQL
+* MongoDB

@@ -142,3 +142,44 @@ fun main() {
     - Names should start with a lower case letter and it cannot contain whitespace.
     - Reserved Words (ex : var, String) cannot be used as names.
   - (Recommended Notation : camelCase Notation)
+
+# 4. Data Types
+```kotlin
+val myNum = 5          // Int
+val myDoubleNum = 5.99 // Double
+val myLetter = 'D'     // Char
+val myBoolean = true   // Boolean
+val myText = "Hello"   // String
+```
+
+- **Integer types** : ```Byte```, ```Short```, ```Int```, ```Long```
+  - Byte : -128 ~ 127
+    ```kotlin
+    val myNum: Byte = 100
+    println(myNum)
+    ```
+  - Short : -32768 ~ 32767
+    ```kotlin
+    val myNum: Short = 10000
+    println(myNum)
+    ```
+  - Int : -2147483648 ~ 2147483647
+    ```kotlin
+    val myNum: Int = 100000
+    println(myNum)
+    ```
+  - Long : -9223372036854775808 ~ 9223372036854775808.
+    - This is used when ``Int``` is not large enough to store the value.
+    - Optionally, you can end the value with an "L"
+    ```kotlin
+    val myNum: Long = 150000000000L
+    println(myNum)
+    ```
+  
+  - Difference Between Int and Long
+    - ```Int``` as long as it is up th 2147483647. If it goes beyond that, it is defined as ```Long```
+    ```kotlin
+    val myNum1 = 2147483647  // Int
+    val myNum2 = 2147483648  // Long 
+    ```
+- **Floating Point types** : ```Float```, ```Double```

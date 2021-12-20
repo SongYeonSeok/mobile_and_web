@@ -243,9 +243,64 @@ val myText = "Hello"   // String
     ```
     
 # 5. Operators
+- Arithmetic Operators : ```+```, ```-```, ```*```, ```/```, ```%```, ```++```, ```--```
+- Assignment Operators : ```=```, ```+=```, ```-=```, ```*=```, ```/=```, ```%=```
+- Comparison Operators : ```==```, ```!=```, ```>```, ```<```, ```>=```, ```<=```
+- Logical Operators : ```&&```, ```||```, ```!```
 
 # 6. Strings
+- Kotlin Strings
+  - Unlike Java, you do not have to specify that the variable should be a ```String```.
+  - Kotlin is smart enough to understand that the greeting variable in the example above is a ```String``` because of the double quotes.
+  - However, just like with other data types, you can specify the type if you insist.
+  ```kotlin
+  var greeting: String = "Hello"
+  ```
+  - Note: If you want to create a ```String``` without assigning the value (and assign the value later), you must specify the type while declaring the variable:
+  ```kotlin
+  // This works fine
+  var name: String
+  name = "John"
+  println(name)
+  ```
+  
+  ```kotlin
+  // error
+  var name
+  name = "John"
+  println(name)
+  ```
+  
+- Access a String
+  - To access the characers (elements) of a string, you must refer to the **index number** inside **square brackets**.
+  ```kotlin
+  var txt = "Hello World"
+  println(txt[0])  // H
+  println(txt[2])  // l
+  ```
+  
+- String Length
+  - A String in Kotlin is an object, which contain properties and functions that can perform certain operations on string, by writing a dot character(```.```) after the specific string variable.
+  - For example, the length of a string can be found with the ```length``` property:
+  ```kotlin
+  var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  println("The length of the txt string is: " + txt.length)
+  ```
 
+- String Functions
+  ```kotlin
+  var txt = "Hello World"
+  println(txt.toUpperCase())  // "HELLO WORLD"
+  println(txt.toLowerCase())  // "hello world"
+  ```
+
+- Comparing Strings
+  - The ```compareTo(string)``` function compares two strings and returns 0 if botu and equal:
+  ```kotlin
+  var txt1 = "Hello World"
+  var txt2 = "Hello World"
+  println(txt1.compareTo(txt2))  // 0 (they are equal)
+  ```
 # 7. Booleans
 
 # 8. If-Else

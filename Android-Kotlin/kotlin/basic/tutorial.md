@@ -183,3 +183,81 @@ val myText = "Hello"   // String
     val myNum2 = 2147483648  // Long 
     ```
 - **Floating Point types** : ```Float```, ```Double```
+  - Float : 3.4e-038 ~ 3.4e+038
+    - Note that you should end the value with an "F".
+    ```kotlin
+    val myNum: Float = 5.75F
+    println(myNum)
+    ```
+
+  - Double : 1.7e-308 ~ 1.7e+308
+    ```kotlin
+    val myNum: Double = 19.99
+    println(myNum)
+    ```
+    
+> The **precision** of a floating point value indicates how many digits the value can have after the decimal point. The precision of ```Float``` is only six or seven decimal digits, while ```Double``` variables have a precision of about 15 digits.
+> Therefore it is safer to use ```Double``` for most calculations.
+
+- Scientific Numbers
+  - A floating point number can also be a scientific number with an "e" or "E" to indicate the power of 10
+  ```kotlin
+  val myNum1: Float = 35E3F
+  val myNum2: Double = 12E4
+  println(myNum1)
+  println(myNum2)
+  ```
+
+- Booleans : data type and can only take the values of ```true``` or ```false```.
+  ```kotlin
+  val isKotlinFun: Boolean = true
+  val isFishTasty: Boolean = false
+  println(isKotlinFun)
+  println(isFishTasty)
+  ```
+  
+- Characters : used to store a **single** character.'
+> Unlike Java, you cannot use ASCII values to display certain characters.
+  ```kotlin
+  val myGrade: Char = 'B'
+  val myLetter: Char = 66  // Error
+  println(myGrade)
+  println(myLetter)
+  ```
+  
+- Type Conversion
+  - Type conversion is when you convert the value of one data type to another type.
+  - In Kotlin, numeric type conversion is different from Java.
+  - For example, it is not possible to convert an ```Int``` type to a ```Long``` type with the following code:
+    ```kotlin
+    val x: Int = 5
+    val y: Long = x
+    println(y)  // Error : Type mismatch
+    ```
+  
+  - To convert a numeric data type to another type, you must use one of the following functions: ```toByte()```, ```toShort()```, ```toInt()```, ```toLong()```, ```toFloat()```, ```toDouble()``` or ```toChar()```
+    ```kotiln
+    val x: Int = 5
+    val y: Long = x.toLong()
+    println(y)
+    ```
+    
+# 5. Operators
+
+# 6. Strings
+
+# 7. Booleans
+
+# 8. If-Else
+
+# 9. When
+
+# 10. While + Break/Contiue
+
+# 11. Arrays
+
+# 12. For Loop
+
+# 13. Ranges
+
+# 14. Kotlin Functions

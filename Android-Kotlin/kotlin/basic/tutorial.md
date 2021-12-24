@@ -301,18 +301,252 @@ val myText = "Hello"   // String
   var txt2 = "Hello World"
   println(txt1.compareTo(txt2))  // 0 (they are equal)
   ```
+
+- Finding a String in a String
+  - The ```indexOf()``` function returns the **index** (the position) of the first occurrence of a specified text in a string (including whitespace):
+  ```kotlin
+  var txt = "Please locate where 'locate' occurs!"
+  println(txt.indexOf("locate"))   // Ouputs 7
+  ```
+  
+- Quotes Inside a String
+  - To use quotes inside a string, use single quotes (```'```):
+  ```kotlin
+  var txt1 = "It's alright"
+  var txt2 = "That's great"
+  ```
+  
+- Single Concatenation
+  - The ```+``` operator can be used between strings to add them together to make a new string. This is called **concatenation**:
+  - You can also use the ```plus()``` function to concatenate two strings:
+  ```kotlin
+  var firstName = "John"
+  var lastName = "Doe"
+  println(firstName + " " + lastName)
+  ```
+  
+  ```kotlin
+  var firstName = "Don "
+  var lastName = "Mills"
+  println(firstName.plus(lastName))
+  ```
+  
+- String Templates/Interpolation
+  - Instead of concatenation, you can also use "string templates", which is an easy way to add variables and expressions inside a string.
+  - Just refer to the variable with the ```$``` symbol
+  ```kotlin
+  var firstName = "John"
+  var lastName = "Doe"
+  prntln("My name is $firstName $lastName")
+  ```
+
+> "String Templates" is a popular feature of Kotlin, as it reduces the amout of code. For example, you don't have to specify a whitespace between firstName and lastName, like we did in the concatenation example.
+
 # 7. Booleans
+- Booleans : ```true``` of ```false```
+  - ```true``` = 1
+  - ```false``` = 0
+
+> The Boolean value of an expression is the basis for all Kotlin comparisons and conditions.
 
 # 8. If-Else
+```kotlin
+if (condition1) {
+    // block of code to be executed if the condition1 is true
+} else if (condition2) {
+    // block of code to be executed if the condition1 is false and condition2 is true
+} else {
+    // block of code to be executed if the condition1 is false and condition2 is false
+}
+```
 
+```kotlin
+val time = 22
+if (time < 10) {
+    println("Good morning.")
+} else if (time 20) {
+    println("Good day.")
+} else {
+    println("Good evening.")
+}
+// Good evening
+```
+
+- Kotlin if-else Expression
+  - In Kotlin, you can also use ```if.. else``` statements as expressions (assign a value to a variable and return it):
+  ```kotlin
+  val time = 20
+  val greeting = if (time < 18) {
+      "Good day."
+  } else {
+      "Good evening."
+  }
+  println(greeting)
+  ```
+  
+  - you can omit the curly braces ```{}``` when ```if``` has only one statement:
+    - omit : 생략, curly braces : 중괄호
+  ```kotlin
+  fun main() {
+      val time = 20
+      val greeting = if (time < 18) "Good day." else "Good evening."
+      println(greeting)
+  }
+  ```
 # 9. When
+- Instead of writing many ```if-else``` expressions, you can use the ```when``` expression, which is much easier to read.
+- It is used to select one of many code blocks to be executed:
+
+  ```kotlin
+  val day = 4
+  
+  val result = when (day) {
+      1 -> "Monday"
+      2 -> "Tuesday"
+      3 -> "Wednesday"
+      4 -> "Thursday"
+      5 -> "Friday"
+      6 -> "Saturday"
+      7 -> "Sunday"
+      else -> "Invalid day."
+  }
+  println(result)
+  ```
+> ```when``` expression == ```switch```
+
+- This is how it works:
+  - The ```when``` variables is ecaluated once.
+  - The value of the **day** variables is compared with the values of each "branch"
+  - Each branch starts with a value, followed by an arrow (->) and a result.
+  - If there is a match, the associated block of code is executed.
+  - ```else``` is used to specify some code to run if there is no match.
+  - In the example above, the value of ```day``` is ```4``` meaning "Thursday" will be printed.
 
 # 10. While + Break/Contiue
+```kotlin
+while (condition) {
+    // code block to be executed
+    //...
+    break
+    //...
+    continue
+    //...
+}
+```
 
+```kotlin
+do {
+    // code block to be executed
+}
+while (condition)
+```
 # 11. Arrays
+- Arrays are used to store multiple values in a single variable, instead of creating seperate variables for each value.
+- To create an array, use the ```arrayOf()``` function, and place the values in a comma-separated list inside it:
+  ```val cars = arrayOf("Volvo", "BMW", "Ford", "Mazda")```
+  
+- Access the Elements of an Array
+  - You can access an array element by referring to the **index number,** inside **square brackets**.
+  ```kotlin
+  val cars = arrayOf("Volvo", "BMW", "Ford", "Mazda")
+  println(cars[0])
+  ```
 
+- Change an Array Element
+  - To change the value of a specific element, refer to the index number:
+  ```kotlin
+  val cars = arrayOf("Volvo", "BMW", "Ford", "Mazda")
+  cars[0] = "Opel"
+  println(cars[0])
+  ```
+
+- Array Length / Size
+  - To find out how many elements an array have, use the ```size``` property.
+  ```kotlin
+  val cars = arrayOf("Volvo", "BMW", "Ford", "Mazda")
+  println(cars.size)
+  ```
+  
+- Check if an Element Exist
+  - You can use the ```in``` operator to check if an element exists in an array:
+  ```kotlin
+  val cars = arrayOf("Volvo", "BMW", "Ford", "Mazda")
+  if ("Volvo" in cars) {
+      println("It exists!")
+  } else {
+      println("It does not exist.")
+  }
+  ```
+
+- Loop Through an Array
+  - Often when you work with arrays, you need to loop through all of the elements.
+  - You can loop through the array elements with the ```for``` loop, which you will learn even more about in the next chapter.
+  ```kotlin
+  val cars = arrayOf("Volvo", "BMW", "Ford", "Mazda")
+  for (x in cars) {
+      println(x)
+  }
+  ```
 # 12. For Loop
+- To loop through array elements, use the ```for``` loop together with the ```in``` operator:
+  ```kotlin
+  val cars = arrayOf(1, 5, 10, 15, 20)
+  for (x in nums) {
+      println(x)
+  }
+  ```
+
+- Traditoinal For Loop
+  - Unlike Java and other programming languages, there is no traditional ```for``` loop in Kotlin.
 
 # 13. Ranges
+- With the ```for``` Loop, you can also create **ranges** of values with ```..```:
+  ```kotlin
+  for (chars in 'a'..'x') {
+      println(chars)
+  }
+  
+  for (nums in 5..15) {
+      println(nums)
+  }
+  ```
 
+- Check if a Value Exists
+  - You can also use the ```in``` operator to check if a value exists in a range:
+  ```kotlin
+  val nums = arrayOf(2, 4, 6, 8)
+  if (2 in nums) {
+      println("It exists!")
+  } else {
+      println("It does not exist.")
+  }
+  
+  val cars = arrayOf("Volvo", "BMW", "Ford", "Mazda")
+  if ("Volvo" in cars) {
+      println("It exists!")
+  } else {
+      println("It does not exist.")
+  }
+  ```
+
+- Break or Continue a Range
+  - You can also use the ```break``` and ```continue``` keywords in a range/```for``` loop:
+  ```kotlin
+  for (nums in 5..15) {
+      if (nums == 10) {
+          break
+      }
+      println(nums)
+  }
+  
+  for (nums in 5..15) {
+      if (nums == 10) {
+          continue
+      }
+      println(nums)
+  }
+  ```
 # 14. Kotlin Functions
+- A **function** is a block of code which only runs when it is called.
+- You can pass data, known as parameters, into a function.
+- Functions are used to perform certain actions, and they are also known as **methods.**

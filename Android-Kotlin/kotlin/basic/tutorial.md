@@ -550,3 +550,45 @@ while (condition)
 - A **function** is a block of code which only runs when it is called.
 - You can pass data, known as parameters, into a function.
 - Functions are used to perform certain actions, and they are also known as **methods.**
+
+- **Predefined Functions**
+  ```kotlin
+  fun main() {
+      println("Hello World")
+  }
+  ```
+
+- **Create Your Own Functions**
+  - To create your own functions, use the ```fun``` keyword, and write the name of the function, followed by parantheses```()```:
+    - parantheses : 관용어
+  ```kotlin
+  fun myFunction() {
+      println("I just got executed!")
+  }
+  ```
+
+- **Call a Function**
+  - Now that you have created a function, you can execute it by **calling** it.
+  - To call a funtion in Kotlin, write the name of the function followed by twh parantheses ```()```.
+  - In the following example, ```myFunction()``` will print some text (the action), when it is called.
+  - A function can be called multiple times, if you want.
+  ```kotlin
+  fun main() {
+      myFunction()  // Call myFunction
+      myFunction()
+      myFunction()
+  }
+  ```
+  
+- Return values
+  - To return a value, use the ```return``` keyword, and specify the **return type** after the function's parantheses (```Int``` in this example):
+  ```kotlin
+  fun myFunction(x: Int, y: Int): Int {
+      return (x + y)
+  }
+  
+  fun main() {
+      var result = myFunction(3, 5)
+      println(result)
+  }
+  ```

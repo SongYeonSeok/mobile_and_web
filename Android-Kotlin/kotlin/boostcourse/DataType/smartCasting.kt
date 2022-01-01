@@ -1,0 +1,25 @@
+fun main() {
+    // 스마트 캐스트 사용해 보기
+    var test: Number = 12.2     // 12.2에 의해 test는 Float형으로 스마트 캐스트
+    println("$test")
+
+    test = 12       // Int형으로 스마트 캐스트
+    println("$test")
+
+    test = 120L     // Long형으로 스마트 캐스트
+    println("$test")
+
+    test += 12.0f   // Float형으로 스마트 캐스트
+    println("$test")
+
+    // is 키워드를 사용한 검사
+    val num = 256
+
+    if (num is Int) {
+        // num이 Int형일 때,
+        println(num)
+    } else if (num !is Int) {
+        // num이 Int형이 아닐 때, !(num is Int)와 동일
+        println("Not a Int")
+    }
+}

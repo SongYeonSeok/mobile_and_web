@@ -31,4 +31,19 @@
   println(a === b)  // true
   ```
   - 참조 주소가 달라지는 경우
-  
+  ```kotlin
+  val a: Int = 128
+  val b: Int? = 128
+  println(a == b)   // true
+  println(a === b)  // false
+  ```
+
+- 이중 등호 비교와 삼중 등호 비교 사용하기
+  > 코틀린에서는 참조형으로 선언한 변수의 값이 -128 ~ 127 범위에 있으면 캐시에 그 값을 저장함
+  - ![image](https://user-images.githubusercontent.com/49339278/147845178-3db60438-8ae7-4b3c-aea7-c19b1334ed0f.png)
+
+- 구체적으로 명시되지 않은 자료형을 자동 변환
+  - 값에 따라 자료형을 결정
+  - Number형은 숫자를 저장하기 위한 특수한 자료형으로 스마트 캐스팅됨
+
+

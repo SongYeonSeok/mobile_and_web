@@ -169,7 +169,7 @@ val myText = "Hello"   // String
     println(myNum)
     ```
   - Long : -9223372036854775808 ~ 9223372036854775808.
-    - This is used when ``Int``` is not large enough to store the value.
+    - This is used when ```Int``` is not large enough to store the value.
     - Optionally, you can end the value with an "L"
     ```kotlin
     val myNum: Long = 150000000000L

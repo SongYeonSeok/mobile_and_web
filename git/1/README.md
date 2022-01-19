@@ -70,7 +70,7 @@ $ git config --global user.email "이메일"
 4. vim 편집기
   - 리눅스의 대표적인 편집기
   - ```$ vim 파일```
-  - [vim 편집기 빡세게 알아보기]()
+  - [vim 편집기 빡세게 알아보기](https://github.com/yeonseoksong/application_dev/tree/main/git/1/)
 
 
 5. 텍스트 문서 내용 확인 : ```cat```

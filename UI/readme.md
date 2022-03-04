@@ -4,6 +4,12 @@
 2. 웹 접근성의 이해
 3. HTML & CSS 활용
 
+## 프로젝트
+- A1
+- A2
+- B
+- C
+
 ## 추가
 - Git 기초 + Source Tree
 - TaskRunner

@@ -1,4 +1,5 @@
 # UI
+> 이 repository는 boostcourse - 웹 UI 개발 강의 노트정리본입니다.
 ## 목차
 1. HTML & CSS 기초
 2. 웹 접근성의 이해

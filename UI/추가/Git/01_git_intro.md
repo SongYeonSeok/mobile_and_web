@@ -72,5 +72,60 @@
     - 파일들이 커밋 되기 전에 모여 있는 임시 저장 공간, 모든 파일은 이 공간을 거쳐 저장소로 옮겨지게 된다.
 
   - git directory(Repository) (저장소)
-    - git이 프로젝트의 메타 데이터와 객체 
+    - git이 프로젝트의 메타 데이터와 객체 데이터베이스를 저장하는 곳을 말함.
+    - 이 ```.git``` 디렉터리가 ```git```의 핵심이다.
+    - git으로 하는 일
+      1. Working Directory에서 파일을 수정한다.
+      2. Staging Area에 파일을 Stage해서 커밋할 스냅샷을 만든다.
+      3. Staging Area에 있는 파일들을 다 커밋해서 git 디렉터리에 영구적인 스냅샷으로 저장한다.
 
+  - "Checkout the project" : .git directory(Repository) -> Stagine Area -> Working Directory
+  - "Stage Fixes" : Working -> Staging Area
+  - "Commit" : Staging Area -> .git directory(Repository)
+
+- 상태
+  - untracked (추적되지 않음)
+    - 추적되지 않은 파일은 모두 작업 디렉터리에 있는 상태이며, 인덱스나 저장소에는 한번도 들어간 적이 없거나 무시된(ignored) 상태의 파일이다.
+  - unmodified (수정되지 않음)
+    - 저장소에 커밋 된 파일이 수정되지 않은 상태를 뜻한다.
+  - modified (수정됨)
+    - 이미 커밋 되었던 파일이 수정되었음을 뜻한다.
+  - staged / indexed (인덱싱됨)
+    - 수정된 파일이 인덱스에 포함되었다면 staged 상태라고 볼 수 있다.
+    - 워킹 디렉터리의 모든 파일은 크게 Tracked(관리 대상임)와 Untracked(관리 대상이 아님)으로 나뉜다.
+    - 처음 저장소를 clone하면 모든 파일은 Tracked이면서 Unmodified 상태이다. 파일을 checkout 하고 나서 아무것도 수정하지 않았기 때문이다.
+    - 마지막 커밋 이후 아직 아무것도 수정하지 않은 상태에서 어떤 파일을 수정하면 git은 그 파일을 Modified 상태로 인식한다.
+    - 실제로 커밋을 하기 위해선, 이 수정한 파일을 Staged 상태로 만들고, Staged 상태의 파일을 커밋한다. 이런 라이브 사이클을 계속 반복한다.
+
+  - "Add the file" : Untracked -> Unmodified -> Modified -> Staged
+  - "Edit the file" : Unmodified -> Modified
+  - "Stage the file" : Modified -> Staged
+  - "Remove the file" : Unmodified -> Untracked
+  - "Commit" : Staged -> Modified -> Unmodified
+  
+  - ignored (무시됨)
+    - ```.gitignore``` 혹은 ```.git/info/exclude```에 설정되어 있는 패턴에 의해 파일 또는 폴더가 무시될 수 있다.
+    - 변경 사항을 추적할 필요 없는 것들을 ignore 처리한다. 무시되면, 작업 디렉토리 내에 있다고 하더라도 git의 영향권에서 벗어나게 된다.
+    - ```.gitignore```는 원격 저장소에 올릴 수 있지만, ```.git/info/exclude```는 원격 저장소에 올릴 수 없다. 즉, ```.git/info/exclude```는 내 로컬에서만 동작한다.
+
+- 명령어 옵션
+  - 옵션 : 단일 하이픈(```-```), 더블 하이픈(```--```)을 사용한다.
+    - 단일 하이픈 : 짧은 형식의 옵션
+    - 더블 하이픈 : 긴 형식의 옵션
+    ```
+    git add -A
+    git add --all
+    ```
+    - 위의 두 가지 명령어는 동일한 기능을 수행한다.
+
+- 실습
+  - ```status``` : 파일 상태를 확인하는 명령
+    - ```git status```
+  - ```add``` : 다음 커밋에 추가하기 위해 파일을 staged 상태로 만드는 것
+    - 특정 파일만 add : ```git add <path/file-name>```
+    - 모든 파일을 add
+      ```
+      git add --all
+      git add -A
+      ```
+  - ```git ls-files --stage``` : 아직 커밋되지 않은 파일이 staged 상태인지 명시적으로 확인하는 방법
